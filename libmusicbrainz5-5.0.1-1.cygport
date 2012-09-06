@@ -1,0 +1,19 @@
+ORIG_PN=${PN%${PV_MAJ}}
+inherit cmake
+
+CATEGORY="Audio"
+SUMMARY="MusicBrainz client library v5"
+DESCRIPTION="MusicBrainz is a community-maintained open source encyclopedia
+of music information. The MusicBrainz Client Library (libmusicbrainz) is a
+development library geared towards developers who wish to add MusicBrainz
+lookup capabilities to their applications."
+HOMEPAGE="http://musicbrainz.org/products/client/download.html"
+SRC_URI="https://github.com/downloads/metabrainz/libmusicbrainz/libmusicbrainz-${PV}.tar.gz"
+PATCH_URI="01-cmake-install.patch
+           02-vpath.patch"
+
+PKG_NAMES="${PN}_0 ${PN}-devel"
+libmusicbrainz5_0_CONTENTS="usr/bin/cygmusicbrainz5-0.dll usr/share/doc/"
+libmusicbrainz5_devel_CONTENTS="usr/include/ usr/lib/"
+
+DIFF_EXCLUDES="Doxyfile config.h"
