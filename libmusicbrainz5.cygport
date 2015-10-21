@@ -1,7 +1,7 @@
 inherit cmake
 
 NAME="libmusicbrainz5"
-VERSION=5.0.1
+VERSION=5.1.0
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="MusicBrainz client library"
@@ -10,13 +10,12 @@ of music information. The MusicBrainz Client Library (libmusicbrainz) is a
 development library geared towards developers who wish to add MusicBrainz
 lookup capabilities to their applications."
 HOMEPAGE="http://musicbrainz.org/doc/libmusicbrainz"
-SRC_URI="https://github.com/downloads/metabrainz/libmusicbrainz/libmusicbrainz-${VERSION}.tar.gz"
+SRC_URI="https://github.com/metabrainz/libmusicbrainz/releases/download/release-${VERSION}/libmusicbrainz-${VERSION}.tar.gz"
 SRC_DIR="libmusicbrainz-${VERSION}"
-PATCH_URI="01-cmake-install.patch
-           02-vpath.patch"
+PATCH_URI="01-cmake-install.patch"
 
-PKG_NAMES="${NAME}_0 ${NAME}-devel"
-libmusicbrainz5_0_CONTENTS="usr/bin/cygmusicbrainz5-0.dll usr/share/doc/"
+PKG_NAMES="${NAME}_1 ${NAME}-devel"
+libmusicbrainz5_1_CONTENTS="usr/bin/cygmusicbrainz5-1.dll usr/share/doc/"
 libmusicbrainz5_devel_CONTENTS="usr/include/ usr/lib/"
 
 DIFF_EXCLUDES="Doxyfile config.h"
